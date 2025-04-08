@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RepRisk 新闻分析工具</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>RepRisk 新闻分析工具</h1>
+    
+    <div class="tabs">
+      <button id="tab-input" class="tab-button active">输入</button>
+      <button id="tab-result" class="tab-button">结果</button>
+      <button id="tab-settings" class="tab-button">设置</button>
+    </div>
+    
+    <div id="input-panel" class="panel active">
+      <div class="form-group">
+        <label for="news-text">新闻文本:</label>
+        <textarea id="news-text" rows="10" placeholder="请输入或粘贴需要分析的新闻文本..."></textarea>
+      </div>
+      
+      <div class="button-group">
+        <button id="extract-page-text" class="secondary-button">从当前页面提取文本</button>
+        <button id="analyze-button" class="primary-button">分析文本</button>
+      </div>
+    </div>
+    
+    <div id="result-panel" class="panel">
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color blue"></div>
+          <span>公司名称</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color yellow"></div>
+          <span>批评信息</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color green"></div>
+          <span>批评来源</span>
+        </div>
+      </div>
+      
+      <div id="analysis-result" class="result-content">
+        <p>分析结果将显示在这里...</p>
+      </div>
+      
+      <div id="summary-section" class="summary">
+        <h2>分析摘要</h2>
+        <div id="summary-content">
+          <!-- 摘要内容将在这里动态生成 -->
+        </div>
+      </div>
+      
+      <div class="button-group">
+        <button id="copy-result" class="secondary-button">复制结果</button>
+        <button id="save-result" class="secondary-button">保存为HTML</button>
+      </div>
+    </div>
+    
+    <div id="settings-panel" class="panel">
+      <div class="form-group">
+        <label for="api-key">OpenAI API密钥:</label>
+        <input type="password" id="api-key" placeholder="请输入您的OpenAI API密钥">
+      </div>
+      
+      <div class="form-group">
+        <label for="model-select">选择模型:</label>
+        <select id="model-select">
+          <option value="gpt-4-turbo">GPT-4 Turbo</option>
+          <option value="gpt-4o">GPT-4o</option>
+          <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>高亮颜色设置:</label>
+        <div class="color-settings">
+          <div class="color-setting">
+            <span>公司名称:</span>
+            <input type="color" id="company-color" value="#cce5ff">
+          </div>
+          <div class="color-setting">
+            <span>批评信息:</span>
+            <input type="color" id="criticism-color" value="#fff3cd">
+          </div>
+          <div class="color-setting">
+            <span>批评来源:</span>
+            <input type="color" id="source-color" value="#d4edda">
+          </div>
+        </div>
+      </div>
+      
+      <div class="button-group">
+        <button id="save-settings" class="primary-button">保存设置</button>
+        <button id="reset-settings" class="secondary-button">恢复默认设置</button>
+      </div>
+    </div>
+    
+    <div id="loading" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>正在分析中，请稍候...</p>
+    </div>
+    
+    <div class="footer">
+      <p>RepRisk 新闻分析工具 v1.0 | 基于OpenAI API</p>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

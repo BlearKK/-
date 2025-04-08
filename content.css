@@ -1,0 +1,157 @@
+/* 内容脚本样式 - 应用于网页中的分析结果 */
+
+/* 高亮样式 */
+.reprisk-company {
+  background-color: #cce5ff;
+  color: #004085;
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: inline;
+}
+
+.reprisk-criticism {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: inline;
+}
+
+.reprisk-source {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: inline;
+}
+
+/* 分析面板样式 */
+.reprisk-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 350px;
+  max-height: 80vh;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.reprisk-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+  cursor: move;
+}
+
+.reprisk-panel-header h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.reprisk-close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.reprisk-close-button:hover {
+  color: #333;
+}
+
+.reprisk-legend {
+  display: flex;
+  padding: 10px 15px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+.reprisk-legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.reprisk-legend-color {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+.reprisk-blue {
+  background-color: #cce5ff;
+}
+
+.reprisk-yellow {
+  background-color: #fff3cd;
+}
+
+.reprisk-green {
+  background-color: #d4edda;
+}
+
+.reprisk-summary-content {
+  padding: 15px;
+  max-height: calc(80vh - 150px);
+  overflow-y: auto;
+}
+
+.reprisk-summary-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.reprisk-summary-item p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.reprisk-button-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.reprisk-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.reprisk-primary-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.reprisk-primary-button:hover {
+  background-color: #2980b9;
+}
+
+.reprisk-secondary-button {
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+}
+
+.reprisk-secondary-button:hover {
+  background-color: #bdc3c7;
+  color: #2c3e50;
+}

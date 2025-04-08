@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RepRisk News Analyzer</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <div class="sidebar-container">
+    <header class="sidebar-header">
+      <div class="logo-container">
+        <img src="images/icon48.png" alt="RepRisk Logo" class="logo">
+        <h1>RepRisk</h1>
+      </div>
+    </header>
+    
+    <nav class="sidebar-nav">
+      <button id="tab-input" class="tab-button active" aria-label="Input">
+        <span class="tab-icon">📝</span>
+        <span class="tab-text">Input</span>
+      </button>
+      <button id="tab-result" class="tab-button" aria-label="Results">
+        <span class="tab-icon">📊</span>
+        <span class="tab-text">Results</span>
+      </button>
+      <button id="tab-abstract" class="tab-button" aria-label="Summary">
+        <span class="tab-icon">📋</span>
+        <span class="tab-text">Summary</span>
+      </button>
+      <button id="tab-settings" class="tab-button" aria-label="Settings">
+        <span class="tab-icon">⚙️</span>
+        <span class="tab-text">Settings</span>
+      </button>
+    </nav>
+    
+    <main class="sidebar-content">
+      <!-- Input Panel -->
+      <section id="input-panel" class="panel active">
+        <div class="form-group">
+          <label for="news-text">News Text</label>
+          <textarea id="news-text" placeholder="Enter or paste news text to analyze..."></textarea>
+        </div>
+        
+        <div class="button-group">
+          <button id="extract-page-text" class="secondary-button">Extract Page Text</button>
+          <button id="analyze-button" class="primary-button">Analyze Text</button>
+        </div>
+      </section>
+      
+      <!-- Results Panel -->
+      <section id="result-panel" class="panel">
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color blue"></div>
+            <span>Company</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color yellow"></div>
+            <span>Criticism</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color green"></div>
+            <span>Source</span>
+          </div>
+        </div>
+        
+        <div id="analysis-result" class="result-content">
+          <p class="placeholder-text">Analysis results will appear here...</p>
+        </div>
+        
+        <div class="button-group">
+          <button id="copy-result" class="secondary-button">Copy Results</button>
+          <button id="save-result" class="secondary-button">Save as HTML</button>
+        </div>
+      </section>
+      
+      <!-- Summary Panel -->
+      <section id="abstract-panel" class="panel">
+        <div id="summary-section">
+          <div id="summary-content">
+            <!-- Summary content will be dynamically generated here -->
+            <p class="placeholder-text">Summary will appear here...</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Settings Panel -->
+      <section id="settings-panel" class="panel">
+        <div class="form-group">
+          <label for="api-key">OpenAI API Key</label>
+          <input type="password" id="api-key" placeholder="Enter your OpenAI API key">
+        </div>
+        
+        <div class="form-group">
+          <label for="model-select">Select Model</label>
+          <select id="model-select">
+            <option value="gpt-4-turbo">GPT-4 Turbo (Recommended)</option>
+            <option value="gpt-4o">GPT-4o</option>
+            <option value="gpt-4o-mini">GPT-4o mini (Faster and more economical)</option>
+            <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Faster but less accurate)</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Highlight Color Settings</label>
+          <div class="color-settings">
+            <div class="color-setting-item">
+              <div class="color-label-preview">
+                <span>Company</span>
+                <div id="company-preview" class="color-preview" style="background-color: #cce5ff;"></div>
+              </div>
+              <input type="color" id="company-color" value="#cce5ff">
+              <div class="color-example">
+                <span>Example: </span>
+                <span class="example-text" style="background-color: #cce5ff;">Apple Inc.</span>
+              </div>
+            </div>
+            
+            <div class="color-setting-item">
+              <div class="color-label-preview">
+                <span>Criticism</span>
+                <div id="criticism-preview" class="color-preview" style="background-color: #fff3cd;"></div>
+              </div>
+              <input type="color" id="criticism-color" value="#fff3cd">
+              <div class="color-example">
+                <span>Example: </span>
+                <span class="example-text" style="background-color: #fff3cd;">The company was accused of environmental issues</span>
+              </div>
+            </div>
+            
+            <div class="color-setting-item">
+              <div class="color-label-preview">
+                <span>Source</span>
+                <div id="source-preview" class="color-preview" style="background-color: #d4edda;"></div>
+              </div>
+              <input type="color" id="source-color" value="#d4edda">
+              <div class="color-example">
+                <span>Example: </span>
+                <span class="example-text" style="background-color: #d4edda;">Environmental organization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="button-group">
+          <button id="save-settings" class="primary-button">Save Settings</button>
+          <button id="reset-settings" class="secondary-button">Reset to Default</button>
+        </div>
+      </section>
+    </main>
+    
+    <!-- Loading Animation -->
+    <div id="loading" class="loading-overlay">
+      <div class="loading-spinner"></div>
+      <p>Analyzing, please wait...</p>
+    </div>
+  </div>
+  
+  <script src="ui.js"></script>
+  <script src="utils.js"></script>
+  <script src="api.js"></script>
+  <script src="sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+/* 
+ * RepRisk 新闻分析工具 - 侧边栏样式
+ * 设计理念：极简主义，参考Dieter Rams设计原则和无印良品(MUJI)产品美学
+ */
+
+/* 基础样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+:root {
+  /* 颜色变量 */
+  --primary-color: #333333;
+  --secondary-color: #666666;
+  --background-color: #f7f7f7;
+  --panel-color: #ffffff;
+  --border-color: #e0e0e0;
+  --accent-color: #4a6da7;
+  --hover-color: #f0f0f0;
+  --company-color: #cce5ff;
+  --criticism-color: #fff3cd;
+  --source-color: #d4edda;
+  
+  /* 间距变量 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  
+  /* 字体大小变量 */
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+  
+  /* 圆角变量 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-size: var(--font-md);
+  line-height: 1.5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 侧边栏容器 */
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--panel-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 侧边栏头部 */
+.sidebar-header {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+}
+
+h1 {
+  font-size: var(--font-lg);
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* 导航栏 */
+.sidebar-nav {
+  display: flex;
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--panel-color);
+}
+
+.tab-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: var(--spacing-sm);
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  background-color: var(--hover-color);
+}
+
+.tab-button.active {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.tab-icon {
+  font-size: var(--font-lg);
+  margin-bottom: var(--spacing-xs);
+}
+
+.tab-text {
+  font-size: var(--font-xs);
+}
+
+/* 内容区域 */
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+}
+
+/* 面板 */
+.panel {
+  display: none;
+  height: 100%;
+}
+
+.panel.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 表单元素 */
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  color: var(--secondary-color);
+  font-size: var(--font-sm);
+}
+
+textarea, input, select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--panel-color);
+  font-size: var(--font-md);
+  color: var(--primary-color);
+  transition: border 0.2s ease;
+}
+
+textarea:focus, input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+/* 按钮 */
+.button-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: #3a5a8c;
+}
+
+.secondary-button {
+  background-color: var(--hover-color);
+  color: var(--primary-color);
+}
+
+.secondary-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* 图例 */
+.legend {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background-color: var(--background-color);
+  border-radius: var(--radius-sm);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.legend-color.blue {
+  background-color: var(--company-color);
+}
+
+.legend-color.yellow {
+  background-color: var(--criticism-color);
+}
+
+.legend-color.green {
+  background-color: var(--source-color);
+}
+
+/* 结果内容 */
+.result-content {
+  flex: 1;
+  padding: var(--spacing-md);
+  background-color: var(--panel-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow-y: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+/* 摘要内容 */
+#summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.company-tag {
+  background-color: var(--background-color);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm);
+  cursor: pointer;
+}
+
+.company-details {
+  display: none;
+  padding: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  background-color: var(--panel-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.company-details.active {
+  display: block;
+}
+
+/* 颜色设置 */
+.color-settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+.color-setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--background-color);
+}
+
+.color-label-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.color-preview {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+}
+
+.color-example {
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-sm);
+  color: var(--secondary-color);
+}
+
+.example-text {
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+}
+
+input[type="color"] {
+  height: 40px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+/* 加载动画 */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--spacing-md);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 占位文本 */
+.placeholder-text {
+  color: var(--secondary-color);
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+/* 高亮样式 */
+.company-highlight {
+  background-color: var(--company-color);
+  padding: 2px 0;
+  border-radius: 2px;
+}
+
+.criticism-highlight {
+  background-color: var(--criticism-color);
+  padding: 2px 0;
+  border-radius: 2px;
+}
+
+.source-highlight {
+  background-color: var(--source-color);
+  padding: 2px 0;
+  border-radius: 2px;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaaaaa;
+}

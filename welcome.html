@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>欢迎使用 RepRisk 新闻分析工具</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin-top: 25px;
+    }
+    
+    .feature {
+      display: flex;
+      margin: 20px 0;
+      align-items: flex-start;
+    }
+    
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      flex-shrink: 0;
+      color: white;
+      font-size: 24px;
+    }
+    
+    .feature-content {
+      flex-grow: 1;
+    }
+    
+    .feature-content h3 {
+      margin-top: 0;
+      color: #3498db;
+    }
+    
+    .steps {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    
+    .step {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+    }
+    
+    .step-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 22px;
+      height: 22px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    .note {
+      background-color: #e1f5fe;
+      padding: 15px;
+      border-left: 4px solid #03a9f4;
+      margin: 20px 0;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    
+    .button:hover {
+      background-color: #2980b9;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #7f8c8d;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>欢迎使用 RepRisk 新闻分析工具</h1>
+    
+    <p>感谢您安装 RepRisk 新闻分析工具！这个扩展程序可以帮助您快速分析新闻文本中的企业风险信息，自动识别公司名称、批评信息和批评来源，并以醒目的颜色标注出来。</p>
+    
+    <div class="feature">
+      <div class="feature-icon">🔍</div>
+      <div class="feature-content">
+        <h3>自动识别关键信息</h3>
+        <p>快速识别新闻中的公司名称、批评信息和批评来源，无需手动筛选。</p>
+      </div>
+    </div>
+    
+    <div class="feature">
+      <div class="feature-icon">🎨</div>
+      <div class="feature-content">
+        <h3>颜色标注</h3>
+        <p>使用不同颜色高亮显示不同类型的信息：</p>
+        <ul>
+          <li><span style="background-color: #cce5ff; color: #004085; padding: 2px 4px; border-radius: 3px;">公司名称</span> - 蓝色背景</li>
+          <li><span style="background-color: #fff3cd; color: #856404; padding: 2px 4px; border-radius: 3px;">批评信息</span> - 黄色背景</li>
+          <li><span style="background-color: #d4edda; color: #155724; padding: 2px 4px; border-radius: 3px;">批评来源</span> - 绿色背景</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <div class="feature-content">
+        <h3>生成分析报告</h3>
+        <p>自动生成分析摘要，方便快速查看关键信息。支持保存为HTML格式的完整报告。</p>
+      </div>
+    </div>
+    
+    <h2>如何使用</h2>
+    
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <p>点击浏览器工具栏中的 RepRisk 图标，打开扩展程序。</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <p>在"设置"标签页中输入您的 OpenAI API 密钥。这是使用分析功能的必要步骤。</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <p>在"输入"标签页中，您可以：</p>
+        <ul>
+          <li>手动输入或粘贴需要分析的新闻文本</li>
+          <li>点击"从当前页面提取文本"按钮，自动提取当前网页的内容</li>
+          <li>在网页上选中文本，右键单击并选择"使用RepRisk分析所选文本"</li>
+        </ul>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">4</div>
+        <p>点击"分析文本"按钮，等待分析完成。</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">5</div>
+        <p>在"结果"标签页中查看分析结果，您可以：</p>
+        <ul>
+          <li>查看高亮显示的文本和分析摘要</li>
+          <li>复制分析结果</li>
+          <li>将结果保存为HTML文件</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="note">
+      <strong>注意：</strong> 分析功能需要调用OpenAI API，请确保您已在设置中输入有效的API密钥。如果您还没有API密钥，可以访问 <a href="https://platform.openai.com/signup" target="_blank">OpenAI官网</a> 注册获取。
+    </div>
+    
+    <a href="popup.html" class="button">开始使用</a>
+    
+    <div class="footer">
+      <p>RepRisk 新闻分析工具 v1.0 | 基于OpenAI API</p>
+    </div>
+  </div>
+</body>
+</html>
